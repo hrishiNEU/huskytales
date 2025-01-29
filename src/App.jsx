@@ -15,7 +15,7 @@ const App = () => {
   useEffect(()=>{
     onAuthStateChanged(auth, async (user)=>{
       if (user){
-        navigate('/huskytales/chat');
+        navigate('/chat');
         await loadUserData(user.uid)
       }
       else{
@@ -27,9 +27,9 @@ const App = () => {
     <>
       <ToastContainer/>
       <Routes>
-        <Route path='/huskytales' element={<Login/>}/>
-        <Route path='/huskytales/chat' element={<Chat/>}/>
-        <Route path='/huskytales/profile' element={<ProfileUpdate/>}/>
+        <Route path='/' element={<Login/>}/>
+        <Route path='/chat' element={<Chat/>}/>
+        <Route path='/profile' element={<ProfileUpdate/>}/>
       </Routes>
     </>
   )
