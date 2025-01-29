@@ -19,7 +19,7 @@ const App = () => {
         await loadUserData(user.uid)
       }
       else{
-        navigate('/huskytales');
+        navigate('/');
       }
     })
   },[])
