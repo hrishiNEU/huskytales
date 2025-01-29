@@ -15,11 +15,11 @@ const App = () => {
   useEffect(()=>{
     onAuthStateChanged(auth, async (user)=>{
       if (user){
-        navigate('/chat');
+        navigate('/huskytales/chat');
         await loadUserData(user.uid)
       }
       else{
-        navigate('/');
+        navigate('/huskytales');
       }
     })
   },[])
@@ -27,9 +27,9 @@ const App = () => {
     <>
       <ToastContainer/>
       <Routes>
-        <Route path='/' element={<Login/>}/>
-        <Route path='/chat' element={<Chat/>}/>
-        <Route path='/profile' element={<ProfileUpdate/>}/>
+        <Route path='/huskytales' element={<Login/>}/>
+        <Route path='/huskytales/chat' element={<Chat/>}/>
+        <Route path='/huskytales/profile' element={<ProfileUpdate/>}/>
       </Routes>
     </>
   )
