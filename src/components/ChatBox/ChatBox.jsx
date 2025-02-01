@@ -5,6 +5,7 @@ import { AppContext } from '../../context/AppContext'
 import { arrayUnion, doc, getDoc, onSnapshot, updateDoc } from 'firebase/firestore'
 import { db } from '../../config/firebase'
 import { toast } from 'react-toastify'
+import upload from '../../lib/upload'
 
 const ChatBox = () => {
 
@@ -119,7 +120,7 @@ const ChatBox = () => {
         <div className='chat-msg'>
             {messages.map((msg,index)=>(
                 <div key = { index} className={msg.sId === userData.id ? "s-msg" : "r-msg"}>
-                    {msg["Image"]
+                    {msg["image"]
                     
                     ?  <img className='msg-img' src={msg.image} alt=''/>
                     : <p className="msg">{msg.text}</p>
