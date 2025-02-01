@@ -39,6 +39,7 @@ const ProfileUpdate = () => {
           name:name
         })
       }
+      navigate('/chat')
     }catch(error){
 
     }
